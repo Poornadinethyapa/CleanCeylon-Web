@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CleanCeylon | Waste Identification & Recycling Guide</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -18,7 +20,7 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
@@ -31,16 +33,32 @@
         <section id="ecofinder" class="feature-section">
             <h2>EcoFinder</h2>
             <p>Search for a waste item to learn how to dispose of it properly in Sri Lanka.</p>
-            
+
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="e.g., Plastic bottle, Battery, Glass...">
                 <button class="btn" id="searchBtn">Search</button>
             </div>
-            
+
             <div id="resultsArea" class="results-grid"></div>
         </section>
+        <section id="challenge" class="feature-section alt-bg">
+            <h2>EcoChallenge Quiz</h2>
+            <p>Test your knowledge on Sri Lankan waste segregation.</p>
+
+            <div class="quiz-container">
+                <h3 id="questionText">Which bin should you use for a broken glass bottle?</h3>
+                <div class="options">
+                    <button class="btn quiz-btn" onclick="checkAnswer('wrong')">Blue Bin (Paper)</button>
+                    <button class="btn quiz-btn" onclick="checkAnswer('correct')">Red Bin (Glass)</button>
+                    <button class="btn quiz-btn" onclick="checkAnswer('wrong')">Orange Bin (Plastic)</button>
+                </div>
+                <p id="quizFeedback"></p>
+            </div>
+        </section>
+
     </main>
 
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
