@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CleanCeylon | Waste Identification & Recycling Guide</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">CleanCeylon ♻️</div>
+            <div class="logo">CleanCeylon</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#ecofinder">EcoFinder</a></li>
@@ -20,9 +20,24 @@
     </header>
     
     <main>
-        <section id="home">
-            <h1>Welcome to CleanCeylon</h1>
-            <p>Your guide to proper waste segregation in Sri Lanka.</p>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Sort Smart, Keep Ceylon Clean</h1>
+                <p>Your ultimate guide to proper waste segregation and recycling across Sri Lanka.</p>
+                <a href="#ecofinder" class="btn">Try EcoFinder</a>
+            </div>
+        </section>
+
+        <section id="ecofinder" class="feature-section">
+            <h2>EcoFinder</h2>
+            <p>Search for a waste item to learn how to dispose of it properly in Sri Lanka.</p>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="e.g., Plastic bottle, Battery, Glass...">
+                <button class="btn" id="searchBtn">Search</button>
+            </div>
+            
+            <div id="resultsArea" class="results-grid"></div>
         </section>
     </main>
 

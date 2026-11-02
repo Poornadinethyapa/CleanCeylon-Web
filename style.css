@@ -60,3 +60,53 @@ body {
     font-size: 1.2rem;
     color: #555;
 }
+
+/* Feature Section Layout */
+.feature-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.feature-section h2 {
+    color: #2e7d32;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Search Container Layout using Flexbox */
+.search-container {
+    margin: 2rem auto;
+    max-width: 500px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Input Field Styling */
+#searchInput {
+    flex: 1;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchInput:focus {
+    border-color: #2e7d32;
+    outline: none;
+}
+
+/* Reusable Button Styling */
+.btn {
+    background-color: #2e7d32;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #1b5e20;
+}
