@@ -4,59 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CleanCeylon | Waste Identification & Recycling Guide</title>
+    <title>CleanCeylon | Eco-Friendly Waste Guide</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
+    <header class="header-container">
         <nav class="navbar">
             <div class="logo">CleanCeylon</div>
             <ul class="nav-links">
+                <li><a href="#events">Events</a></li>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#ecofinder">EcoFinder</a></li>
-                <li><a href="#challenge">EcoChallenge</a></li>
-                <li><a href="#directory">Recycling Directory</a></li>
+                <li><a href="#directory">Directory</a></li>
+                <li><a href="#challenge">Quiz</a></li>
             </ul>
+            <a href="#ecofinder" class="btn nav-btn">Search</a>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Sort Smart, Keep Ceylon Clean</h1>
-                <p>Your ultimate guide to proper waste segregation and recycling across Sri Lanka.</p>
-                <a href="#ecofinder" class="btn">Try EcoFinder</a>
+                <span class="badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="vertical-align: middle; margin-right: 4px; margin-top: -2px;">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                        </path>
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                    </svg> Plant Ceylon
+                </span>
+                <h1>Find Eco-Friendly<br>Disposal Easily</h1>
+                <p>Your one stop to proper waste segregation and recycling across Sri Lanka.</p>
+                <a href="#directory" class="btn outline-btn">Explore Directory</a>
             </div>
         </section>
 
-        <section id="ecofinder" class="feature-section">
-            <h2>EcoFinder</h2>
-            <p>Search for a waste item to learn how to dispose of it properly in Sri Lanka.</p>
-
+        <div id="ecofinder" class="floating-search">
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="e.g., Plastic bottle, Battery, Glass...">
-                <button class="btn" id="searchBtn">Search</button>
+                <input type="text" id="searchInput" placeholder="Search plastic, battery, glass...">
+                <button class="btn search-btn" id="searchBtn">Search</button>
             </div>
-
             <div id="resultsArea" class="results-grid"></div>
-        </section>
-        <section id="challenge" class="feature-section alt-bg">
-            <h2>EcoChallenge Quiz</h2>
-            <p>Test your knowledge on Sri Lankan waste segregation.</p>
+        </div>
 
-            <div class="quiz-container">
-                <h3 id="questionText">Which bin should you use for a broken glass bottle?</h3>
-                <div class="options">
-                    <button class="btn quiz-btn" onclick="checkAnswer('wrong')">Blue Bin (Paper)</button>
-                    <button class="btn quiz-btn" onclick="checkAnswer('correct')">Red Bin (Glass)</button>
-                    <button class="btn quiz-btn" onclick="checkAnswer('wrong')">Orange Bin (Plastic)</button>
+        <section id="directory" class="feature-section">
+            <h2>Verified Recycling Centres</h2>
+            <p>Find local drop-off points for your segregated waste.</p>
+
+            <div class="directory-grid">
+                <div class="directory-card">
+                    <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=500&auto=format&fit=crop"
+                        alt="E-waste">
+                    <div class="card-content">
+                        <h3>Western Province E-Waste</h3>
+                        <p>Accepts: Batteries, Laptops, Mobile Phones</p>
+                        <a href="#" class="btn card-btn">View Center</a>
+                    </div>
                 </div>
-                <p id="quizFeedback"></p>
+                <div class="directory-card">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=500&auto=format&fit=crop"
+                        alt="Paper recycling">
+                    <div class="card-content">
+                        <h3>Central Paper Recycling</h3>
+                        <p>Accepts: Cardboard, Newspapers, Books</p>
+                        <a href="#" class="btn card-btn">View Center</a>
+                    </div>
+                </div>
+                <div class="directory-card">
+                    <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=500&auto=format&fit=crop"
+                        alt="Glass recycling">
+                    <div class="card-content">
+                        <h3>Southern Glass Collection</h3>
+                        <p>Accepts: Glass bottles, Jars, Broken glass</p>
+                        <a href="#" class="btn card-btn">View Center</a>
+                    </div>
+                </div>
             </div>
         </section>
+        <!-- Dynamic EcoChallenge Quiz -->
+        <section id="challenge" class="feature-section alt-bg">
+            <h2>Test Your Knowledge</h2>
+            <div class="quiz-container">
+                <h3 id="questionText">Loading quiz...</h3>
+                <div class="options" id="quizOptions"></div>
+                <p id="quizFeedback"></p>
+                <button id="nextBtn" class="btn rsvp-btn" style="display: none; margin-top: 15px;"
+                    onclick="nextQuestion()">Next Question</button>
+            </div>
+        </section>
+        <!-- Shramadana Event Tracker -->
+        <section id="events" class="feature-section">
+            <h2>Community Cleanups</h2>
+            <p>Join a local Shramadana event and make a real impact in your neighborhood.</p>
 
+            <div id="eventGrid" class="event-grid">
+                <!-- Event cards will be injected here by JavaScript -->
+            </div>
+        </section>
+        <!-- Illegal Dumping Report Tool -->
+        <section id="report" class="feature-section alt-bg">
+            <h2>Report Illegal Dumping</h2>
+            <p>Help keep your community clean by reporting uncollected garbage or illegal dumping sites to local
+                authorities.</p>
+
+            <form id="reportForm" class="report-form">
+                <div class="form-group">
+                    <label for="reportLocation">Location / Landmark</label>
+                    <input type="text" id="reportLocation" placeholder="e.g., Near Belihuloya Junction" required>
+                </div>
+                <div class="form-group">
+                    <label for="reportDesc">Description</label>
+                    <textarea id="reportDesc" rows="4" placeholder="Describe the type and amount of waste..."
+                        required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="reportPhoto">Upload Photo (Optional)</label>
+                    <input type="file" id="reportPhoto" accept="image/*">
+                </div>
+                <button type="submit" class="btn rsvp-btn">Submit Report</button>
+                <div id="formFeedback" class="form-feedback"></div>
+            </form>
+        </section>
     </main>
+
+    <footer class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>CleanCeylon</h3>
+                <p>A Computing and Information Systems initiative to promote sustainable waste management and recycling
+                    across Sri Lanka.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#ecofinder">EcoFinder</a></li>
+                    <li><a href="#directory">Recycling Directory</a></li>
+                    <li><a href="#challenge">EcoChallenge Quiz</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Get Involved</h4>
+                <p>Sabaragamuwa University of Sri Lanka<br>Belihuloya, 70140</p>
+                <p>Email: hello@cleanceylon.lk</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 CleanCeylon. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
 </body>

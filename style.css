@@ -1,148 +1,501 @@
-/* Global Reset and Typography */
+/* =========================================
+   Global Reset & Cream Theme (System Fonts)
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #f7f8f3; 
+    color: #3e4a3d;
+    line-height: 1.6;
 }
 
-/* Navigation Bar Layout */
+/* =========================================
+   Pill-Shaped Navbar
+   ========================================= */
+.header-container {
+    padding: 1.5rem 2rem;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2e7d32;
-    padding: 1.5rem 2rem;
-    color: white;
+    background-color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
+    color: #4b7235;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: opacity 0.2s;
-}
-
-.nav-links a:hover {
-    opacity: 0.8;
-}
-
-/* Hero Section Layout */
-#home {
-    text-align: center;
-    padding: 5rem 2rem;
-    background-color: #e8f5e9;
-}
-
-#home h1 {
-    color: #1b5e20;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-#home p {
-    font-size: 1.2rem;
     color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
-/* Feature Section Layout */
+.nav-btn {
+    padding: 0.6rem 1.5rem !important;
+}
+
+/* =========================================
+   Hero Section 
+   ========================================= */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=2000&auto=format&fit=crop') center/cover;
+    margin: 1rem;
+    border-radius: 30px;
+    padding: 10rem 2rem 12rem 2rem;
+    color: white;
+    text-align: left;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin-left: 2rem;
+}
+
+.badge {
+    background: rgba(255,255,255,0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 1rem 0;
+    line-height: 1.1;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.outline-btn {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.outline-btn:hover {
+    background-color: white;
+    color: #4b7235;
+}
+
+/* =========================================
+   Floating Search Bar (EcoFinder)
+   ========================================= */
+.floating-search {
+    margin: -5rem auto 3rem auto;
+    background: #dce7d1;
+    max-width: 800px;
+    padding: 1rem;
+    border-radius: 50px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.search-container {
+    display: flex;
+    background: white;
+    border-radius: 50px;
+    padding: 0.5rem;
+}
+
+#searchInput {
+    flex: 1;
+    border: none;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    outline: none;
+    background: transparent;
+}
+
+.search-btn {
+    background-color: #4b7235;
+    padding: 0.8rem 2rem;
+}
+
+/* =========================================
+   Buttons & Typography
+   ========================================= */
+.btn {
+    background-color: #4b7235;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #3b5a29;
+    transform: translateY(-2px);
+}
+
 .feature-section {
-    padding: 4rem 2rem;
+    padding: 4rem 5%;
     text-align: center;
 }
 
 .feature-section h2 {
-    color: #2e7d32;
-    font-size: 2rem;
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+/* =========================================
+   Cards Grid (Directory)
+   ========================================= */
+.directory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.directory-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.directory-card:hover {
+    transform: translateY(-5px);
+}
+
+.directory-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    color: #4b7235;
     margin-bottom: 0.5rem;
 }
 
-/* Search Container Layout using Flexbox */
-.search-container {
-    margin: 2rem auto;
-    max-width: 500px;
-    display: flex;
-    gap: 10px;
+.card-btn {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
 }
 
-/* Input Field Styling */
-#searchInput {
-    flex: 1;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-}
-
-#searchInput:focus {
-    border-color: #2e7d32;
-    outline: none;
-}
-
-/* Reusable Button Styling */
-.btn {
-    background-color: #2e7d32;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.btn:hover {
-    background-color: #1b5e20;
-}
-/* EcoChallenge Layout */
+/* =========================================
+   EcoChallenge Quiz
+   ========================================= */
 .alt-bg {
-    background-color: #f1f8e9;
+    background-color: #eaf1e1;
 }
 
 .quiz-container {
-    background-color: white;
-    margin: 2rem auto;
-    padding: 2rem;
+    background: white;
     max-width: 600px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.options {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 1.5rem 0;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 20px;
 }
 
 .quiz-btn {
-    background-color: #f8f9fa;
+    background-color: white;
     color: #333;
-    border: 2px solid #2e7d32;
+    border: 2px solid #4b7235;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .quiz-btn:hover {
-    background-color: #e8f5e9;
+    background-color: #eaf1e1;
 }
 
-#quizFeedback {
-    font-weight: bold;
+/* Dynamic JS Result Styling */
+.result-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 20px;
     margin-top: 1rem;
-    min-height: 24px;
+    text-align: left;
+}
+
+.category-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   Modern Footer
+   ========================================= */
+.footer-container {
+    background-color: #3e4a3d; 
+    color: #eaf1e1;
+    padding: 4rem 5% 2rem 5%;
+    margin-top: 4rem;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p, .footer-contact p {
+    color: #c4d7b2;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links h4, .footer-contact h4 {
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: #c4d7b2;
+    text-decoration: none;
+    line-height: 2;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #c4d7b2;
+    font-size: 0.85rem;
+}
+/* =========================================
+   Community Cleanups (Events)
+   ========================================= */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.event-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-left: 5px solid #4b7235;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card h3 {
+    color: #4b7235;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.event-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.volunteer-count {
+    font-weight: 600;
+    color: #3e4a3d;
+    margin: 1.5rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rsvp-btn {
+    width: 100%;
+    text-align: center;
+    background-color: #f7f8f3;
+    color: #4b7235;
+    border: 2px solid #4b7235;
+}
+
+.rsvp-btn:hover {
+    background-color: #4b7235;
+    color: white;
+}
+
+/* State when user clicks to join */
+.rsvp-btn.joined {
+    background-color: #4b7235;
+    color: white;
+    cursor: default;
+}
+/* =========================================
+   Mobile Responsiveness (Media Queries)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Stack Navbar */
+    .header-container {
+        padding: 1rem;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 25px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* Adjust Hero Section & Typography */
+    .hero {
+        padding: 12rem 1rem 8rem 1rem;
+        text-align: center;
+    }
+    .hero-content {
+        margin-left: 0;
+    }
+    .hero h1 {
+        font-size: 2.5rem; /* Smaller text for mobile */
+    }
+
+    /* Fix Floating Search Bar */
+    .floating-search {
+        margin: -3rem 1rem 2rem 1rem;
+        border-radius: 25px;
+    }
+    .search-container {
+        flex-direction: column;
+        background: transparent;
+        gap: 10px;
+    }
+    #searchInput {
+        background: white;
+        padding: 1rem;
+        width: 100%;
+    }
+    .search-btn {
+        width: 100%;
+    }
+
+    /* Container Padding */
+    .feature-section, .quiz-container, .report-form {
+        padding: 2rem 1.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    /* Footer adjustments */
+    .footer-container {
+        padding: 3rem 1.5rem 1.5rem 1.5rem;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+}
+/* =========================================
+   Report Form
+   ========================================= */
+.report-form {
+    background: white;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4b7235;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #dce7d1;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4b7235;
+}
+
+.form-feedback {
+    margin-top: 1rem;
+    font-weight: 600;
+    text-align: center;
 }
