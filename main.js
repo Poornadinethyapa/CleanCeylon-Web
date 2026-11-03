@@ -240,3 +240,20 @@ function nextQuestion() {
 
 // Initialize the first question when the script loads
 loadQuestion();
+// FAQ Accordion Logic
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        // Toggle the active class to rotate the SVG icon
+        question.classList.toggle('active');
+        
+        // Expand or collapse the answer panel
+        const answer = question.nextElementSibling;
+        if (question.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+            answer.style.maxHeight = null;
+        }
+    });
+});
