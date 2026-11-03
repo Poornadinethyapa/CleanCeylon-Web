@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoChallenge | CleanCeylon</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header-container">
+        <nav class="navbar">
+            <div class="logo">CleanCeylon</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+            </ul>
+            <a href="index.html#ecofinder" class="btn nav-btn">Search</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="challenge" class="feature-section alt-bg" style="padding-top: 10rem; min-height: 70vh;">
+            <h2>Test Your Knowledge</h2>
+            <div class="quiz-container">
+                <h3 id="questionText">Loading quiz...</h3>
+                <div class="options" id="quizOptions"></div>
+                <p id="quizFeedback"></p>
+                <button id="nextBtn" class="btn rsvp-btn" style="display: none; margin-top: 15px;" onclick="nextQuestion()">Next Question</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>CleanCeylon</h3>
+                <p>A Computing and Information Systems initiative to promote sustainable waste management across Sri Lanka.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Recycling Directory</a></li>
+                    <li><a href="events.html">Community Events</a></li>
+                    <li><a href="quiz.html">EcoChallenge Quiz</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Get Involved</h4>
+                <p>Sabaragamuwa University of Sri Lanka<br>Belihuloya, 70140</p>
+                <p>Email: hello@cleanceylon.lk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CleanCeylon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

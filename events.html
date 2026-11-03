@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Events | CleanCeylon</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header-container">
+        <nav class="navbar">
+            <div class="logo">CleanCeylon</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+            </ul>
+            <a href="index.html#ecofinder" class="btn nav-btn">Search</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="events" class="feature-section" style="padding-top: 10rem;">
+            <h2>Community Cleanups</h2>
+            <p>Join a local Shramadana event and make a real impact in your neighborhood.</p>
+            
+            <div id="eventGrid" class="event-grid">
+                <!-- Event cards will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <section id="report" class="feature-section alt-bg">
+            <h2>Report Illegal Dumping</h2>
+            <p>Help keep your community clean by reporting uncollected garbage or illegal dumping sites.</p>
+            
+            <form id="reportForm" class="report-form">
+                <div class="form-group">
+                    <label for="reportLocation">Location / Landmark</label>
+                    <input type="text" id="reportLocation" placeholder="e.g., Near Belihuloya Junction" required>
+                </div>
+                <div class="form-group">
+                    <label for="reportDesc">Description</label>
+                    <textarea id="reportDesc" rows="4" placeholder="Describe the type and amount of waste..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="reportPhoto">Upload Photo (Optional)</label>
+                    <input type="file" id="reportPhoto" accept="image/*">
+                </div>
+                <button type="submit" class="btn rsvp-btn">Submit Report</button>
+                <div id="formFeedback" class="form-feedback"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>CleanCeylon</h3>
+                <p>A Computing and Information Systems initiative to promote sustainable waste management across Sri Lanka.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Recycling Directory</a></li>
+                    <li><a href="events.html">Community Events</a></li>
+                    <li><a href="quiz.html">EcoChallenge Quiz</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Get Involved</h4>
+                <p>Sabaragamuwa University of Sri Lanka<br>Belihuloya, 70140</p>
+                <p>Email: hello@cleanceylon.lk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CleanCeylon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
