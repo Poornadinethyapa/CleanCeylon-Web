@@ -558,3 +558,80 @@ body {
     margin: 0;
     font-size: 0.95rem;
 }
+/* =========================================
+   About Us Page
+   ========================================= */
+.about-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+    text-align: left;
+}
+
+.about-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.about-card h3 {
+    color: #4b7235;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.about-card p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.profile-card {
+    background-color: #f7f8f3;
+    border: 2px solid #dce7d1;
+    text-align: center;
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #4b7235;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+}
+
+.profile-title {
+    font-weight: 600;
+    color: #3e4a3d !important;
+    margin-bottom: 1rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.tech-badge {
+    background-color: #dce7d1;
+    color: #3e4a3d;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Update Media Query for About Grid */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
