@@ -683,3 +683,22 @@ body {
     font-size: 0.95rem;
     line-height: 1.6;
 }
+/* =========================================
+   EcoChallenge Progress Bar
+   ========================================= */
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: #dce7d1;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #4b7235;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
