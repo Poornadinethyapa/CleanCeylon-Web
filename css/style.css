@@ -61,7 +61,7 @@ body {
    Hero Section 
    ========================================= */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=2000&auto=format&fit=crop') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('/Images/hero.jpg') center/cover;
     margin: 1rem;
     border-radius: 30px;
     padding: 10rem 2rem 12rem 2rem;
@@ -634,4 +634,52 @@ body {
     .about-grid {
         grid-template-columns: 1fr;
     }
+}
+/* =========================================
+   Quick Eco-Tips Grid
+   ========================================= */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.tip-card {
+    background: #f7f8f3;
+    border-radius: 15px;
+    padding: 2rem;
+    border-left: 4px solid #4b7235;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-3px);
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.tip-icon {
+    margin-bottom: 1rem;
+    background: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.tip-card h3 {
+    color: #3e4a3d;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.tip-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
