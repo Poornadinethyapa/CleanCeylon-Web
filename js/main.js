@@ -15,10 +15,10 @@ const wasteData = [
 ];
 
 function getCategoryIcon(category) {
-    if (category === "Recyclable") return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4b7235" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>`;
-    if (category === "Hazardous" || category === "E-Waste") return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>`;
-    if (category === "Compostable") return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4b7235" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>`;
-    return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>`;
+    if (category === "Recyclable") return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4b7235" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>`; 
+    if (category === "Hazardous" || category === "E-Waste") return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>`; 
+    if (category === "Compostable") return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4b7235" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>`; 
+    return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>`; 
 }
 
 const searchInput = document.getElementById('searchInput');
@@ -27,7 +27,7 @@ const resultsArea = document.getElementById('resultsArea');
 
 function searchWaste() {
     const query = searchInput.value.toLowerCase().trim();
-    resultsArea.innerHTML = '';
+    resultsArea.innerHTML = ''; 
     if (query === "") {
         resultsArea.innerHTML = '<p>Please enter an item to search.</p>';
         return;
@@ -52,7 +52,7 @@ function searchWaste() {
 // Guard: Only run search listeners if we are on index.html
 if (searchBtn && searchInput) {
     searchBtn.addEventListener('click', searchWaste);
-    searchInput.addEventListener('keypress', function (e) {
+    searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') searchWaste();
     });
 }
@@ -76,7 +76,7 @@ if (faqQuestions.length > 0) {
 }
 
 // =========================================
-// 3. Shramadana Events Logic (localStorage Upgraded)
+// 3. Shramadana Events Logic (localStorage)
 // =========================================
 const eventsData = [
     { id: 1, title: "Belihuloya Campus Cleanup", date: "Nov 15, 2026", location: "Sabaragamuwa University", volunteers: 24 },
@@ -84,26 +84,20 @@ const eventsData = [
     { id: 3, title: "Kandy Lake Shramadana", date: "Nov 28, 2026", location: "Kandy Lake Round", volunteers: 12 }
 ];
 
-// Check browser memory for previously joined events (returns an array of IDs, or empty array if none)
 let joinedEvents = JSON.parse(localStorage.getItem('cleanCeylonJoinedEvents')) || [];
 
 function renderEvents() {
     const eventGrid = document.getElementById('eventGrid');
     if (!eventGrid) return; // Guard against running on non-event pages
-
-    eventGrid.innerHTML = '';
-
+    
+    eventGrid.innerHTML = ''; 
+    
     eventsData.forEach(event => {
-        // Check if the current event ID exists in local storage
         const hasJoined = joinedEvents.includes(event.id);
-
-        // If they joined in a previous session, visually add their +1 to the base volunteer count
         const displayVolunteers = hasJoined ? event.volunteers + 1 : event.volunteers;
-
-        // Set the correct button styles and text based on their saved state
         const btnClass = hasJoined ? 'btn rsvp-btn joined' : 'btn rsvp-btn';
-        const btnText = hasJoined
-            ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; margin-right: 5px;"><polyline points="20 6 9 17 4 12"></polyline></svg> You're In!`
+        const btnText = hasJoined 
+            ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; margin-right: 5px;"><polyline points="20 6 9 17 4 12"></polyline></svg> You're In!` 
             : 'Count Me In';
 
         const card = document.createElement('div');
@@ -131,27 +125,42 @@ function renderEvents() {
 function joinEvent(id) {
     const btn = document.getElementById(`btn-${id}`);
     const countSpan = document.getElementById(`vol-count-${id}`);
-
-    // Only execute if they haven't joined yet
+    
     if (!btn.classList.contains('joined')) {
         const event = eventsData.find(e => e.id === id);
         if (event) {
-            // 1. Save state to localStorage
             joinedEvents.push(id);
             localStorage.setItem('cleanCeylonJoinedEvents', JSON.stringify(joinedEvents));
-
-            // 2. Update UI instantly
             const newTotal = event.volunteers + 1;
             countSpan.innerText = `${newTotal} Volunteers`;
-
             btn.classList.add('joined');
             btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; margin-right: 5px;"><polyline points="20 6 9 17 4 12"></polyline></svg> You're In!`;
         }
     }
 }
-
-// Initialize
 renderEvents();
+
+// =========================================
+// 4. Report Form Logic
+// =========================================
+const reportForm = document.getElementById('reportForm');
+if (reportForm) { 
+    reportForm.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        
+        this.innerHTML = `
+            <div style="text-align: center; padding: 3rem 1rem; animation: fadeIn 0.5s ease;">
+                <div style="background-color: #dce7d1; color: #4b7235; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h3 style="color: #3e4a3d; font-size: 1.6rem; margin-bottom: 0.8rem;">Report Submitted!</h3>
+                <p style="color: #555; font-size: 1rem; line-height: 1.6;">Thank you for helping keep your community clean. Your report has been securely sent to the local municipal authorities for review.</p>
+            </div>
+        `;
+    });
+}
 
 // =========================================
 // 5. EcoChallenge Quiz Logic
@@ -160,7 +169,7 @@ const quizQuestions = [
     {
         question: "Which bin should you use for a broken glass bottle?",
         options: ["Blue Bin (Paper)", "Red Bin (Glass)", "Orange Bin (Plastic)"],
-        correctAnswer: 1,
+        correctAnswer: 1, 
         feedback: "Glass items belong in the Red Bin. Always wrap broken glass securely!"
     },
     {
@@ -180,11 +189,20 @@ const quizQuestions = [
 let currentQuestionIndex = 0;
 let score = 0;
 
+function updateProgressBar() {
+    const progressBar = document.getElementById('progressBar');
+    if (progressBar) {
+        const percentage = ((currentQuestionIndex + 1) / quizQuestions.length) * 100;
+        progressBar.style.width = `${percentage}%`;
+    }
+}
+
 function loadQuestion() {
     const q = quizQuestions[currentQuestionIndex];
     document.getElementById('questionText').innerText = q.question;
     const optionsDiv = document.getElementById('quizOptions');
-    optionsDiv.innerHTML = '';
+    optionsDiv.innerHTML = ''; 
+    
     q.options.forEach((opt, index) => {
         const btn = document.createElement('button');
         btn.className = 'btn quiz-btn';
@@ -192,8 +210,11 @@ function loadQuestion() {
         btn.onclick = () => checkAnswer(index);
         optionsDiv.appendChild(btn);
     });
+    
     document.getElementById('quizFeedback').innerHTML = '';
     document.getElementById('nextBtn').style.display = 'none';
+    
+    updateProgressBar();
 }
 
 function checkAnswer(selectedIndex) {
@@ -201,15 +222,16 @@ function checkAnswer(selectedIndex) {
     const feedbackElement = document.getElementById('quizFeedback');
     const nextBtn = document.getElementById('nextBtn');
     const buttons = document.querySelectorAll('#quizOptions .quiz-btn');
+    
     buttons.forEach(btn => btn.disabled = true);
 
     if (selectedIndex === q.correctAnswer) {
         score++;
         feedbackElement.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4b7235" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Correct! ${q.feedback}`;
-        feedbackElement.style.color = "#4b7235";
+        feedbackElement.style.color = "#4b7235"; 
     } else {
         feedbackElement.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Not quite! ${q.feedback}`;
-        feedbackElement.style.color = "#d32f2f";
+        feedbackElement.style.color = "#d32f2f"; 
     }
     nextBtn.style.display = 'block';
 }
@@ -223,12 +245,20 @@ function nextQuestion() {
         document.getElementById('quizOptions').innerHTML = '';
         document.getElementById('quizFeedback').innerHTML = '';
         document.getElementById('nextBtn').style.display = 'none';
+        
+        const progressContainer = document.querySelector('.progress-container');
+        if (progressContainer) progressContainer.style.display = 'none';
+        
         const restartBtn = document.createElement('button');
         restartBtn.className = 'btn rsvp-btn';
         restartBtn.innerText = 'Restart Quiz';
         restartBtn.onclick = () => {
             currentQuestionIndex = 0;
             score = 0;
+            if (progressContainer) {
+                progressContainer.style.display = 'block';
+                document.getElementById('progressBar').style.width = '0%';
+            }
             loadQuestion();
         };
         document.getElementById('quizOptions').appendChild(restartBtn);

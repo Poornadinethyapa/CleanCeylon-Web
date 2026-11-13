@@ -541,9 +541,9 @@ body {
    ========================================= */
 .about-grid {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr; /* Changed from 3fr 2fr */
     gap: 2rem;
-    max-width: 1000px;
+    max-width: 800px; /* Reduced slightly for better readability on a single card */
     margin: 3rem auto 0;
     text-align: left;
 }
