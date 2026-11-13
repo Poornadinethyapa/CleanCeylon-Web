@@ -217,48 +217,26 @@ body {
 }
 
 /* =========================================
-   EcoChallenge Quiz
+   Quiz Options - 3 Column Layout
    ========================================= */
-.alt-bg {
-    background-color: #eaf1e1;
-}
-
-.quiz-container {
-    background: white;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    border-radius: 20px;
+.options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Forces 3 buttons in one row */
+    gap: 1.5rem;
+    margin: 2rem 0;
 }
 
 .quiz-btn {
-    background-color: white;
-    color: #333;
-    border: 2px solid #4b7235;
     width: 100%;
-    margin-bottom: 10px;
-}
-
-.quiz-btn:hover {
-    background-color: #eaf1e1;
-}
-
-/* Dynamic JS Result Styling */
-.result-card {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 20px;
-    margin-top: 1rem;
-    text-align: left;
-}
-
-.category-label {
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+    white-space: normal; /* Allows text to wrap if it's long */
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 0.5rem;
+    justify-content: center;
+    text-align: center;
+    height: 100%; /* Keeps all 3 buttons the exact same height */
 }
-
 /* =========================================
    Modern Footer
    ========================================= */
@@ -636,69 +614,50 @@ body {
     }
 }
 /* =========================================
-   Quick Eco-Tips Grid
+   Upgraded Eco-Tips Frame Theme
    ========================================= */
 .tips-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* This strictly forces 3 cards in one row */
     gap: 2rem;
     margin-top: 3rem;
     text-align: left;
 }
 
-.tip-card {
-    background: #f7f8f3;
-    border-radius: 15px;
-    padding: 2rem;
-    border-left: 4px solid #4b7235;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
 .tip-card:hover {
-    transform: translateY(-3px);
-    background: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transform: translateY(-5px);
+    border-color: #4b7235; /* Dark sage outline on hover */
+    box-shadow: 0 11px 0 #4b7235; /* 3D pop effect */
 }
 
 .tip-icon {
-    margin-bottom: 1rem;
-    background: white;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    background: #f7f8f3;
+    width: 60px;
+    height: 60px;
+    border-radius: 18px; /* Squircle frame for the icon */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    border: 2px solid #dce7d1;
+    transition: all 0.3s ease;
 }
 
-.tip-card h3 {
-    color: #3e4a3d;
-    margin-bottom: 0.8rem;
-    font-size: 1.2rem;
+.tip-card:hover .tip-icon {
+    background: #4b7235;
+    border-color: #4b7235;
+    transform: scale(1.1) rotate(5deg);
 }
 
-.tip-card p {
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-/* =========================================
-   EcoChallenge Progress Bar
-   ========================================= */
-.progress-container {
-    width: 100%;
-    height: 10px;
-    background-color: #dce7d1;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-    overflow: hidden;
+/* Inverts the SVG icon to white when hovering over the card */
+.tip-card:hover .tip-icon svg {
+    stroke: #ffffff !important; 
+    transition: stroke 0.3s ease;
 }
 
-.progress-bar {
-    height: 100%;
-    width: 0%;
-    background-color: #4b7235;
-    border-radius: 10px;
-    transition: width 0.4s ease;
+@media (max-width: 768px) {
+    /* Add this inside your existing mobile media query */
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
 }
