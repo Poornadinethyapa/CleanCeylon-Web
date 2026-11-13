@@ -541,11 +541,11 @@ body {
    ========================================= */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Changed from 3fr 2fr */
+    grid-template-columns: 1fr; 
     gap: 2rem;
-    max-width: 800px; /* Reduced slightly for better readability on a single card */
+    max-width: 800px; 
     margin: 3rem auto 0;
-    text-align: left;
+    text-align: center; /* Changed from left to center */
 }
 
 .about-card {
